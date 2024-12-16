@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Financier display';
+    background-color: #e4e4e4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+ 
+.container {
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.table-section {
+    background-color: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.199);
+    padding: 20px;
+    flex: 1;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2f2f7b;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+table th, table td {
+    padding: 5px;
+    border: 1px solid #ece3e3;
+    text-align: center;
+}
+
+table td {
+    font-size: 12px;
+    text-align: left !important;
+}
+
+td .actions {
+    display: flex;
+    justify-content: center;
+    gap: 5px;  /* Espaçamento entre os botões */
+}
+
+table th {
+    background-color: #d4d3d3;
+    color: #2f2f7b;
+    border: 1px solid #bdb8b8;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+h5{
+    color: #8f8c8c;
+}
+
+h3{
+    color: #ff0000;
+}

@@ -2,8 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for, session, B
 from models.homeM import User
 
 # Cria as senhas cadastradas no site
-admin_user = User("admin", "senhaforte", "admin")  # Usuário administrador
-user1 = User("user1", "1234", "user")              # Usuário comum
+admin_user = User("admin@1", "senhaforte", "admin")  # Usuário administrador
+user1 = User("user@1", "1234", "user")              # Usuário comum
 user_list = [admin_user, user1]                    # Lista de usuários registrados
 
 # Cria um blueprint
@@ -45,6 +45,15 @@ def admin_page():
         flash("Você precisa estar logado como administrador para acessar essa página.")
         return redirect(url_for('login_controller.login_page'))
     return render_template('admin.html')  # Renderiza a página do administrador
+
+# Define a rota para a página do administrador
+@login_controller.route('/lista')
+def bloqueio_lista():
+    # Verifica se o usuário está logado e se o papel (role) é de administrador
+    if 'email_logado' not in session or session.get('role') != 'admin':
+        flash("Você precisa estar logado como administrador para acessar essa página.")
+        return redirect(url_for('login_controller.login_page'))
+    return render_template('listagem.html')  # Renderiza a página da lista de usuários
 
 # Define a rota para a página do usuário comum
 @login_controller.route('/user')

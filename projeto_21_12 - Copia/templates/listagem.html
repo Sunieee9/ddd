@@ -1,43 +1,43 @@
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário e Lista</title>
+    <title>Lista de Usuários</title>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='listagem.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    <div class="table-section">
-        <h2>Lista de Itens</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Senha</th>
-                    <th>Telefone</th>
-                    <th>Data de Nascimento</th>
-                </tr>
-            </thead>
-            <tbody id="itemList">
-                {% for cadastro in cadastros %}
+    <div class="container">
+        <div class="table-section">
+            <h2>Lista de Usuários</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Senha</th>
+                        <th>Telefone</th>
+                        <th>Data de Nascimento</th>
+                    </tr>
+                </thead>
+                <tbody id="itemList">
+                    {% for cadastro in cadastros %}
                     <tr>
                         <td>{{cadastro.name}}</td>
                         <td>{{cadastro.email}}</td>
                         <td>{{cadastro.password}}</td>
                         <td>{{cadastro.telephone}}</td>
                         <td>{{cadastro.registratiom_date}}</td>
-                        <td>
-                            <div class="actions">
-                                <a class="btn-edit" href="/{{cadastros.id}}"><i class="fas fa-pencil-alt"></i></a>
-                                <a class="btn-delete" href="/{{cadastro.id}}"><i class="fas fa-trash-alt"></i></a>
-                            </div>
-                        </td>
                     </tr>
-                {% endfor %}
-                <!-- Linhas serão adicionadas aqui -->
-            </tbody>
-        </table>
+                    {% endfor %}
+                    <!-- Linhas serão adicionadas aqui -->
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>

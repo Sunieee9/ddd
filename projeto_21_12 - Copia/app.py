@@ -11,7 +11,7 @@ from controllers.listagemC import lista_controller
 app = Flask(__name__)
 
 # Define uma chave secreta para proteger a sessão do aplicativo (necessária para sessões em Flask)
-app.secret_key = 'US'
+app.secret_key = 'MRY'
 
 # Registra os blueprints para organizar as rotas e controladores
 app.register_blueprint(login_controller)  # Registra o blueprint do controlador de login
