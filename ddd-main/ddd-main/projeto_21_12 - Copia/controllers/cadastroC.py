@@ -27,7 +27,7 @@ def add():
         name=nome,
         email=email,
         password=senha,
-        access_level="user",  # Define um nível de acesso padrão
+        access_level='admin',  # Define um nível de acesso padrão
         telefone=telefone,
         register_date=data_nascimento
     )

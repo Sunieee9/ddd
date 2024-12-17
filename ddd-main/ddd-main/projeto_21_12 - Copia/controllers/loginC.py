@@ -20,7 +20,10 @@ def login_page():
             session['role'] = person.access_level  # Armazena o nivel do usuario na sessão
             flash(f'{person.name} está logado com sucesso!')  # Exibir usuario
 
+            print(f"Usuário {person.name} com role: {person.access_level}") # correção de erro
+
             # Redireciona para a página correspondente ao papel do usuário
+            print(person.access_level)
             if person.access_level == 'admin':
                 return redirect(url_for('login_controller.admin_page'))
             else:
