@@ -1,5 +1,5 @@
-from flask import Blueprint, render_template, request
-from repository import PersonRepository
+from flask import Blueprint, render_template, request, jsonify
+from repository import PersonRepository, OrdersRepository
 
 # Instância do repositório
 person_repository = PersonRepository()
@@ -35,3 +35,18 @@ def add():
 
     # Após o cadastro, redireciona o usuário para a página de login
     return render_template('login.html')
+
+@cadastro_controller.route('/ped')
+def adddd():
+    person_id = 1
+    date = "17012008"
+    status = "pendente"
+    total = 10
+
+    # Crie uma instância de OrdersRepository antes de chamar add_order
+    orders_repository = OrdersRepository()
+
+    new_order = orders_repository.add_order(person_id=person_id, date=date, status=status, total=total)
+
+    return jsonify(new_order.to_json()), 201
+

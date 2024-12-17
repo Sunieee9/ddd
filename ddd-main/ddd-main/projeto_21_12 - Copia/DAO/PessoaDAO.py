@@ -47,7 +47,6 @@ class PersonDAO:
 
     @staticmethod
     def delete_person(id_person):
-        """Remove uma pessoa pelo ID."""
         person = PersonDAO.get_person(id_person)
         if not person:
             return None
