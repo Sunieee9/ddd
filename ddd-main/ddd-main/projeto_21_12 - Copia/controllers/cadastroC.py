@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template, request, jsonify
-from repository import PersonRepository, OrdersRepository
-
+from repository import PersonRepository, OrdersRepository, ProductRepository
 # Instância do repositório
 person_repository = PersonRepository()
 
@@ -50,3 +49,18 @@ def adddd():
 
     return jsonify(new_order.to_json()), 201
 
+@cadastro_controller.route('/procd')
+def procd():
+    name = "Pulseira"
+    description = "coisa que poem no pulso"
+    price = 1000
+    stock_quantity = 5
+    category_id = 1
+
+    produto_repository = ProductRepository()
+
+    new_produto = produto_repository.add_product(name = name, description = description, price = price, stock_quantity = stock_quantity, category_id = category_id)
+
+    return jsonify(new_produto.to_json()), 201
+
+    
