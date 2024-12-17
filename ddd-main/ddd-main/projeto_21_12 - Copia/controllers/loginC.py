@@ -2,8 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for, session, B
 from models.homeM import User
 
 # Cria as senhas cadastradas no site
-admin_user = User("admin@1", "senhaforte", "admin")  # Usuário administrador
-user1 = User("user@1", "1234", "user")              # Usuário comum
+admin_user = User("admin@gmail.com", "senhaforte", "admin")  # Usuário administrador
+user1 = User("user@gmail.com", "1234", "user")              # Usuário comum
 user_list = [admin_user, user1]                    # Lista de usuários registrados
 
 # Cria um blueprint
